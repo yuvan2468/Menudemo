@@ -1,0 +1,41 @@
+import java.awt.*;
+import java.applet.*;
+public class Menudemo extends Applet
+{
+public void init()
+{
+int width=Integer.parseInt(getParameter("width"));
+int height=Integer.parseInt(getParameter("height"));
+Frame f=new Frame("demo Frame");
+f.resize(width,height);
+MenuBar mbar= new MenuBar();
+f.setMenuBar(mbar);
+Menu fi=new Menu();
+fi.add(new MenuItem("New"));
+fi.add(new MenuItem("Open"));
+fi.add(new MenuItem("Close"));
+fi.add(new MenuItem("-"));
+fi.add(new MenuItem("new"));
+mbar.add(fi);
+Menu edit=new Menu("Edit");
+edit.add(new MenuItem("Cut"));
+edit.add(new MenuItem("Copy"));
+edit.add(new MenuItem("Paste"));
+edit.add(new MenuItem("-"));
+Menu Sub=new Menu("Special");
+Sub.add(new MenuItem("First"));
+Sub.add(new MenuItem("Second"));
+Sub.add(new MenuItem("Third"));
+edit.add(Sub);
+edit.add(new CheckboxMenuItem("debuging"));
+edit.add(new CheckboxMenuItem("Texting"));
+mbar.add(edit);
+f.show();
+}
+}
+/*<html>
+<head>
+<applet code="Menudemo.class" width=400 height=400>
+</applet>
+</head>
+</html>*/
